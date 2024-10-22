@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="/styles/home.css">
+    <link rel="icon" href="/images/pencilFaviCon.png">
+    <script src="/script.js" defer></script>
+    <title>Contact Form</title>
+</head>
+
+<body>
+    <!-- Main Container -->
+    <div class="container">
+        <!-- Header -->
+        <header>
+            <h1>Contact Form</h1>
+        </header>
+
+        <!-- Contact Form -->
+        <form>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="fname">First Name</label>
+                    <input type="text" id="fname" name="fname">
+                </div>
+                <div class="form-group">
+                    <label for="lname">Last Name</label>
+                    <input type="text" id="lname" name="lname">
+                </div>
+                <div class="form-group">
+                    <label for="jobt">Job Title</label>
+                    <input type="text" id="jobt" name="jobt">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="company">Company</label>
+                    <input type="text" id="company" name="company">
+                </div>
+                <div class="form-group">
+                    <label for="linkedin">LinkedIn URL</label>
+                    <input type="text" id="linkedin" name="linkedin">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email Address</label>
+                    <input type="email" id="email" name="email">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="meeting">How did we meet?</label>
+                    <select id="meeting" name="meeting">
+                        <option value="none">Please select</option>
+                        <option value="online">Online</option>
+                        <option value="event">Event</option>
+                        <option value="referral">Referral</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="other">Other (please specify)</label>
+                    <input type="text" id="other" name="other">
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="message">Message</label>
+                    <textarea id="message" name="message" rows="4"></textarea>
+                </div>
+            </div>
+            <div class="form-row">
+                <div class="checkbox-group">
+                    <label for="mailing-list">Please add me to your mailing list</label>
+                    <input type="checkbox" id="mailing-list" name="mailing-list">
+                </div>
+            </div>
+            <div class="form-row" id="lastEl">
+                <label>Choose an email format:</label>
+                <div class="radio-group">
+                    <input type="radio" id="html" name="email-format" value="html">
+                    <label for="html">HTML</label>
+                </div>
+                <div class="radio-group">
+                    <input type="radio" id="text" name="email-format" value="text">
+                    <label for="text">Text</label>
+                </div>
+            </div>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>
