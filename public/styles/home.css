@@ -48,6 +48,13 @@ input, textarea, select {
     
 }
 
+#other-input{
+    margin-top: .6rem;
+    display: none;
+
+    
+}
+
 
 button {
     padding: .25rem 1.5rem;
@@ -65,5 +72,16 @@ button:hover {
 
 #lastEl{
     justify-content: left;
+    display: none;
 }
 
+/* Defining err styles */
+/* Changing all err elements to red */
+
+.err{
+    color: red;
+    display: none;
+}
+
+/* Visibility: hidden - takes space still */
+/* dispay: none -- Doesn't take space */

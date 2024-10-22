@@ -12,9 +12,8 @@ app.get('/', (req, res) => {
     res.render('home');
 });
 
-app.post('/success', (req, res) => {
-    const data = req.body;
-    res.send(data);   
+app.get('/success.ejs', (req, res) => {
+    res.render('success');  
 });
 
 app.listen(PORT, () => {
