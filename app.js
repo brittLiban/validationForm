@@ -44,34 +44,64 @@ app.set('view engine', 'ejs');
 
 app.get('/', (req, res) => {
     // Log message to the server's console
-	console.log("Hello, world - server!");
+    console.log("Hello, world - server!");
     res.render('home');
 });
 
-app.post('/success',  async (req, res) => {
+app.post('/success', async (req, res) => {
 
     let details = req.body;
     // confirming were capturing it locally 
 
     const data = {
-        fname : req.body.fname,
-        lname : req.body.lname,
-        jobtitile : req.body.jobt,
-        company : req.body.company,
-        linkedin : req.body.linkedin,
-        email : req.body.email,
-        meeting : req.body.meeting,
-        message : req.body.message,
-        mailinglist : req.body.mailinglist
+        fname: req.body.fname,
+        lname: req.body.lname,
+        jobtitle: req.body.jobt,
+        company: req.body.company,
+        linkedin: req.body.linkedin,
+        email: req.body.email,
+        meeting: req.body.meeting,
+        message: req.body.message,
+        mailinglist: req.body.mailinglist
     };
 
-    console.log(data);
+    if (data.mailinglist === undefined) {
+        data.mailinglist = 'no';
+    }
 
+    console.log(data);
     //Connect to the database
     const conn = await connect();
+    await conn.query(`INSERT INTO guestbook
+        (fname,lname,jobtitle,company,linkedin,email,meeting,message,mailinglist) 
+        VALUES (
+        '${data.fname}',
+        '${data.lname}',
+        '${data.jobtitile}',
+        '${data.company}',
+        '${data.linkedin}',
+        '${data.email}',
+        '${data.meeting}',
+        '${data.message}',
+        '${data.mailinglist}'
+        
+        )`);
+
+
+        // DISPLAYING ALL THE INFO
+
+        const results = await conn.query(`
+            SELECT * FROM guestbook
+            ORDER BY entryData DESC
+        `);
+    
+        console.log(results);
+
+
+
 
     //Insert the query into the database. 
-    res.render('success');
+    res.render('admin' , {persons: results});
 });
 
 app.listen(PORT, () => {
