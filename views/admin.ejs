@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Thank You</title>
+ 
+</head>
+<body>
+    <div >
+        <h1>Admin Page</h1>
+        <p>Here is everyone that has submitted the form!</p>
+    </div>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Entry #</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Job Title</th>
+                <th>Company</th>
+                <th>Linkedin</th>
+                <th>Email</th>
+                <th>How did we meet?</th>
+                <th>Message</th>
+                <th>Mailing List?</th>
+                <th>Date of Entry</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% persons.forEach(person => { %>
+                <tr>
+                    <td><%= person.id %></td>
+                    <td><%= person.fname %></td>
+                    <td><%= person.lname %></td>
+                    <td><%= person.jobtitle %></td>
+                    <td><%= person.company %></td>
+                    <td><%= person.linkedin %></td>
+                    <td><%= person.email %></td>
+                    <td><%= person.meeting %></td>
+                    <td><%= person.message %></td>
+                    <td><%= person.mailinglist %></td>
+                    <td><%= person.entryData %></td>
+
+                    
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</body>
+</html>
